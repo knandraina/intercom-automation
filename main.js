@@ -6,8 +6,9 @@ const fs = require('fs')
 const writeFile = Promise.promisify(fs.writeFile)
 const appendFile = Promise.promisify(fs.appendFile)
 
+//don't delete : https://spreadsheets.google.com/feeds/list/1ucnQU7Fcl9j0D_qdKcFzNq4a4zQ-RECcc3zYab00dHA/oo6s3r0/public/values?alt=json
+const url = 'https://spreadsheets.google.com/feeds/list/1c7mICCo8kjKo2Acrhm5agXwkY5mH4eSrkHmC8Lqcmmg/od6/public/values?alt=json'
 
-const url = 'https://spreadsheets.google.com/feeds/list/1ucnQU7Fcl9j0D_qdKcFzNq4a4zQ-RECcc3zYab00dHA/oo6s3r0/public/values?alt=json'
 const CLOUD_NAME = "dhihbdbbw"
 const API_KEY = "228176856144175"
 const API_SECRET = "56wRwecH1pDvWQ29o9bZOgdpPM0"
@@ -120,7 +121,7 @@ async function doScreenShot(url) {
 
   // await writeFile(filePath, fields.join(';') + '\r\n', 'utf8')
 
-  const browser = await puppeteer.launch({ args: ['--window-size=1440,1000'], headless: false })
+  const browser = await puppeteer.launch({ args: ['--window-size=1440,1000']})
   const page = await browser.newPage() 
   page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36')
   page.setViewport({ width: 1440, height: 721 })
