@@ -19,56 +19,14 @@ cloudinary.config({
   api_secret: API_SECRET,
 })
 
+
+
+
 const filePath = "screenshot.csv"
 const fields =[
   "companyName",
   "link"
 ]
-// async function main(array_filtered) {
-
-
-//   const browser = await puppeteer.launch({ args: ['--window-size=1440,1000'], headless: false })
-
-
-//   for (var i = 0; i < array_filtered.length; i++) {
-
-//     const page = await browser.newPage()
-
-//     page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36')
-//     page.setViewport({ width: 1440, height: 721 })
-//     page.setDefaultNavigationTimeout(10000)
-//     await page.goto(`https://${array_filtered[i]}`)
-//     await page.waitFor(4000)
-
-//     if (await page.$(".intercom-launcher-frame") !== null || await page.$(".intercom-launcher") !== null) {
-//       console.log("found")
-//       await page.waitFor(10000)
-
-//       let shotResult = await page.screenshot({ path: `${array_filtered[i]}.png` })
-//         .then(result => {
-//           return result
-//         })
-//         .catch(e => {
-//           return false
-//         })
-
-//       const cloudinary_options = {
-//         public_id: `${array_filtered[i]}.png`
-//       }
-
-//       cloudinaryPromise(shotResult, cloudinary_options)
-
-//     } else {
-
-//       console.log("not found")
-
-//     }
-
-//     await page.close()
-
-//   }
-//   await browser.close()
-// }
 
 
 function json_file() {
